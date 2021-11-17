@@ -1,4 +1,4 @@
-package fr.unilorraine.idmc.gamescatalog.services;
+package fr.unilorraine.idmc.gamescatalog.repositories;
 
 
 import fr.unilorraine.idmc.gamescatalog.entities.Game;
