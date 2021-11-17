@@ -11,9 +11,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GameService {
 
-    private final GamesRepository repository;
+    private final GamesRepository repository = null;
 
     public List<Game> findAll() {
         return null;
+    }
+
+    public Game create(Game gg) {
+        return repository.save(gg);
     }
 }
