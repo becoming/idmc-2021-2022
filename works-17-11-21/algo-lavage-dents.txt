@@ -1,0 +1,23 @@
+Algorithme pour se laver les dents:
+
+
+
+prendre la brosse à dents
+ouvrir le robinet
+passer la brosse à dents sous l'eau
+fermer le robinet
+prendre le tube de dentifrice
+ouvrir le tube de dentifrice
+mettre du dentifrice sur la brosse à dents
+fermer le tube de dentifrice
+poser le tube de dentifrice
+ouvrir le robinet
+passer la brosse à dents sous l'eau
+fermer le robinet
+se laver les dents
+cracher dans le lavabo
+ouvrir le robinet
+rincer sa bouche
+rincer la brosse à dents
+fermer le robinet
+poser la brosse à dents
