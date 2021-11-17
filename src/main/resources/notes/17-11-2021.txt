@@ -1,0 +1,20 @@
+- There are more efficient and less efficient ways.
+- domain: url inversee
+- artifact
+- api rest ( ressource main )
+- jar/war
+- URL Unified ressource locator / URI (identifier)
+- domain.tld. <- lis à l'inverse
+- crud create read update delete
+- camel/pascal/snake case ( & kebab wtf )
+
+domain.tld:8080/games
+               /games/id
+               /games?filter=best
+               /games/id/publishers/id/addy
+
+no right & wrong, depends
+
+https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/
+use jpa buddy (easy life)
+ctrl p -> voir les paramètres
