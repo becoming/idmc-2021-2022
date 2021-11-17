@@ -1,0 +1,14 @@
+###
+GET http://localhost:8080/games
+Content-Type: application/json
+
+###
+POST http://localhost:8080/games
+Content-Type: application/json
+
+{
+  "name": "Quake III",
+  "category": "Shooter",
+  "rating": 10,
+  "price": 49
+}

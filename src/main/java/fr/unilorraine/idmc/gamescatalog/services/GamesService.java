@@ -17,4 +17,7 @@ public class GamesService {
         return repository.findAll();
     }
 
+    public Game create(Game g) {
+        return repository.save(g);
+    }
 }
