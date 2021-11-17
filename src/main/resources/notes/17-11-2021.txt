@@ -8,13 +8,24 @@
 - crud create read update delete
 - camel/pascal/snake case ( & kebab wtf )
 
+#Principe REST
 domain.tld:8080/games
                /games/id
                /games?filter=best
                /games/id/publishers/id/addy
 
-no right & wrong, depends
+- no right & wrong, depends
 
-https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/
-use jpa buddy (easy life)
-ctrl p -> voir les paramètres
+https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/ (lombok)
+- use jpa buddy (easy life)
+- ctrl p -> voir les paramètres
+- principe SOLID partout
+- projet organisé en couches techniques (non métier)
+- opinionated framework, respect des principes
+- DI dependency injection, dependency free, springboot instancie en premier les classes de ce type
+- pas de complexité inutile KISS
+- YAGNI implémenter que les choses que l'on sait nécessaires
+- DRY ne pas se repeter, réutiliser ses codes
+- Managed Bean: instances créer par spring à partir des annotations
+- Injection des beans
+-
