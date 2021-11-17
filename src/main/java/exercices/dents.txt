@@ -1,0 +1,13 @@
+laver_dent()
+    Prendre un verre d'eau;
+    Remplir le verre d'eau
+    prendre une brosse a dent
+    mouiller ma brosse a dent
+    mettre du dentifrice
+    se brosser les dents pendant 5 minutes
+    se rincer la boucher
+    cracher l'eau
+    rincer brosse a dent
+    ranger brosse a dent
+    ranger dentifrice
+    ranger gobelet
