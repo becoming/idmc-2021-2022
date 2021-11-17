@@ -1,6 +1,5 @@
 package fr.unilorraine.idmc.gamescatalog.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.unilorraine.idmc.gamescatalog.entities.Game;
@@ -15,6 +14,10 @@ public class GamesService {
 
     public Iterable<Game> findAll() {
         return repository.findAll();
+    }
+
+    public Game create(Game gg) {
+        return repository.save(gg);
     }
 
 }
