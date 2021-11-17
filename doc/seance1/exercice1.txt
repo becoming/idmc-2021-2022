@@ -1,0 +1,18 @@
+si veux se laver les dents alors
+	aller dans la salle de bain
+	se mettre devant lavabo
+	si brosse a dent alors
+		prendre brosse à dent
+		si dentifrice alors
+			prendre dentifrice
+			se laver les dents
+			quand c'est fini alors
+				je rince tout et je range le dentifrice et la brosse
+			fin
+		sinon
+			il n'y a pas de dentifrice
+		fin
+	sinon
+		il n'y a pas de brosse a dents
+	fin
+fini
