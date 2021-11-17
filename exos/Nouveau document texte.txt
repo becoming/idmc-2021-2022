@@ -1,0 +1,16 @@
+Si veut se brosser les dents alors
+ prendre brosse à dent
+ Si brosse à dent
+	prendre dentifrice
+	si dentifrice
+ 		mettre dentifrice
+ 		Brosser les dents pendant 2min
+		Rincer bouche
+ 		laver brosse à dent
+	Sinon
+	 Ajouter dentifrice à la liste de course
+        fin
+ Sinon
+	Ajouter à la liste de course
+ Fin
+Fin
