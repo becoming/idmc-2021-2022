@@ -8,7 +8,7 @@
 		<version>2.5.6</version>
 		<relativePath/>
 	</parent>
-	<groupId>fr.univlorraine.idmc</groupId>
+	<groupId>fr.unilorraine.idmc</groupId>
 	<artifactId>games-catalog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>games-catalog</name>
