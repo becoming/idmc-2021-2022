@@ -11,4 +11,8 @@ public class GameService {
     public Iterable<Game> findAll(){
         return repository.findAll();
     }
+
+    public Game create(Game gg) {
+        return repository.save(gg);
+    }
 }
