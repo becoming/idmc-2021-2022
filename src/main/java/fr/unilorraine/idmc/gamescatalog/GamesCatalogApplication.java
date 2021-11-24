@@ -4,9 +4,10 @@ import fr.unilorraine.idmc.gamescatalog.repositories.GamesRepository;
 import fr.unilorraine.idmc.gamescatalog.services.GamesService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 public class GamesCatalogApplication {
 
 	public static void main(String[] args) {
