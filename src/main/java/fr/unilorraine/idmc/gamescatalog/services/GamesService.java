@@ -12,20 +12,23 @@ import fr.unilorraine.idmc.gamescatalog.repositories.PublisherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.StreamSupport;
+
 @Service
 @RequiredArgsConstructor
 public class GamesService {
 
 
     private final GamesRepository gamesRepository;
-
-    public Iterable<Game> findAll(){
-        return gamesRepository.findAll();
-    }
-
-    private final GamesRepository repo;
     private final PublisherRepository publisherRepo;
     private final GamesMapper mapper;
+
+    public Iterable<GameView> findAll(){
+        return () -> StreamSupport.stream(gamesRepository.findAll().spliterator(), false)
+                .map(mapper::toDto).iterator();
+    }
+
+
 
     public GameView create(NewGame newGame) {
         var gg = mapper.toEntity(newGame);
@@ -35,7 +38,7 @@ public class GamesService {
                         .orElseThrow(() -> PublisherNotFound.of(newGame));
 
         gg.setPublisher(publisher);
-        gg = repo.save(gg);
+        gg = gamesRepository.save(gg);
 
         return mapper.toDto(gg);
     }

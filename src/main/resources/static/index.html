@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, I'm index, who are you ?</title>
+</head>
+<body>
+
+Hello, Index, I'm rodi
+<div id="echo-postman"></div>
+<div id="echo-postman-feign"></div>
+<script>
+
+    let postman1 = document.getElementById('echo-postman');
+    let postman2 = document.getElementById('echo-postman-feign');
+
+    fetch("http://localhost:8080/postman-echo/get")
+        .then((resp) => (resp.text().then((text)=> {postman1.append(text)})))
+    fetch("http://localhost:8080/postman-echo/get/feign")
+        .then((resp) => (resp.text().then((text)=> {postman2.append(text)})))
+
+</script>
+</body>
+</html>
