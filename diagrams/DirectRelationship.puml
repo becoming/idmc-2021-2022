@@ -1,13 +1,13 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-interface Game{
-    string id
-    string publisher id
+interface Game {
+   string id
+   string publisher_id
 }
 
-interface Publisher{
-    string id
+interface Publisher {
+   string id
 }
 
 Game --> Publisher
