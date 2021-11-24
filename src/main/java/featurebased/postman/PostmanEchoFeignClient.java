@@ -1,4 +1,4 @@
-package fr.unilorraine.idmc.gamescatalog.client;
+package featurebased.postman;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

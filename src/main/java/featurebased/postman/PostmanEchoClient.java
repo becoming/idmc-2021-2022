@@ -1,6 +1,5 @@
-package fr.unilorraine.idmc.gamescatalog.client;
+package featurebased.postman;
 
-import fr.unilorraine.idmc.gamescatalog.config.PostmanProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;

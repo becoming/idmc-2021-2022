@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, I'm index, who are you ?</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    fetch("http://localhost:8080/postman-echo/get")
+        .then(response => response.text())
+        .then(data => document.getElementById("response").innerHTML = data);
+</script>
+
+<div id="response"></div>
+
+</body>
+</html>
