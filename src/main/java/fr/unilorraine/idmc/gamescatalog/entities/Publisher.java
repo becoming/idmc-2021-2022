@@ -17,6 +17,10 @@ public class Publisher {
     @Column(name = "id", nullable = false)
     private Long id;
 
+
+    private String name;
+
+
     private String name;
 
 }
