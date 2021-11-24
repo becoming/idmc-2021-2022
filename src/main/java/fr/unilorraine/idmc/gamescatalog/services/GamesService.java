@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class GamesService {
+
     private final GamesRepository repository;
 
     public Iterable<Game> findAll() {
         return repository.findAll();
     }
 
-    public Game create(Game game) {
-        return repository.save(game);
+    public Game create(Game gg) {
+        return repository.save(gg);
     }
 }

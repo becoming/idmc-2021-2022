@@ -12,6 +12,7 @@ import java.time.Instant;
 @Setter
 @NoArgsConstructor
 public class Game {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -22,4 +23,5 @@ public class Game {
     private String category;
     private Instant releaseDate;
     private Long publisherId;
+
 }

@@ -13,12 +13,12 @@ public class GamesController {
     private final GamesService gamesService;
 
     @GetMapping
-    public Iterable<Game> getAll() {
+    public Iterable<Game> findAll() {
         return gamesService.findAll();
     }
 
     @PostMapping
-    public Game create(@RequestBody Game game) {
-        return gamesService.create(game);
+    public Game create(@RequestBody Game gg) {
+        return gamesService.create(gg);
     }
 }
