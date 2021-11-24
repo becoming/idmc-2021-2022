@@ -24,6 +24,12 @@ public interface GamesMapper {
     @Mapping(source = "publisher.name", target = "publisherName")
     GameView toDto(Game gg);
 
+    default List<GameView> toDto(Iterable<Game> games){
+        var result = new ArrayList<GameView>();
+        games.forEach(game -> result.add(toDto(game)));
+        return result;
+    }
+
 //    https://www.baeldung.com/mapstruct-ignore-unmapped-properties#ignore-specific-fields
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "publisher", ignore = true)

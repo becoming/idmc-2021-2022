@@ -17,7 +17,7 @@ public class GamesController {
     private final GamesService gamesService;
 
     @GetMapping
-    public Iterable<Game> findAll() {
+    public List<GameView> findAll() {
         return gamesService.findAll();
     }
 
