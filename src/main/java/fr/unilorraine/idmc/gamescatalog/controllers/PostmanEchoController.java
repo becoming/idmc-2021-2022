@@ -1,13 +1,9 @@
 package fr.unilorraine.idmc.gamescatalog.controllers;
 
-        import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoClient;
-        import fr.unilorraine.idmc.gamescatalog.dto.GameView;
-        import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
-        import fr.unilorraine.idmc.gamescatalog.services.GamesService;
-        import lombok.RequiredArgsConstructor;
-        import org.springframework.web.bind.annotation.*;
-
-        import java.util.List;
+import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoJDK11Client;
+import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoFeignClient;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 // https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
@@ -15,15 +11,16 @@ package fr.unilorraine.idmc.gamescatalog.controllers;
 @RequiredArgsConstructor
 public class PostmanEchoController {
 
-    private final PostmanEchoClient client;
+    private final PostmanEchoJDK11Client client;
+    private final PostmanEchoFeignClient feignClient;
 
     @GetMapping("get")
-    public String testGet(){
+    public String testGet() {
         return client.testGet();
     }
 
     @GetMapping("get/feign")
-    public String testGetFeign(){
-        return feignclient.testGet();
+    public String testGetFeign() {
+        return feignClient.testGet();
     }
 }
