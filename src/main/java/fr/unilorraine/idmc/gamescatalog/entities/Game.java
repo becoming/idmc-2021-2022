@@ -16,7 +16,6 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String name;
     private Long price;
     private int rating;
