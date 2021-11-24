@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.data.domain.Page;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //https://www.baeldung.com/mapstruct#1-modify-the-mapper
@@ -28,4 +29,10 @@ public interface GamesMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "publisher", ignore = true)
     Game toEntity(NewGame dto);
+
+    default List<GameView> toDto(Iterable<Game> games) {
+        var result = new ArrayList<GameView>();
+        games.forEach(game -> result.add(toDto(game)));
+        return result;
+    }
 }

@@ -7,6 +7,8 @@ import fr.unilorraine.idmc.gamescatalog.services.GamesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 // https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
 @RequestMapping("games")
@@ -16,7 +18,7 @@ public class GamesController {
     private final GamesService gamesService;
 
     @GetMapping
-    public Iterable<Game> findAll() {
+    public List<GameView> findAll() {
         return gamesService.findAll();
     }
 
