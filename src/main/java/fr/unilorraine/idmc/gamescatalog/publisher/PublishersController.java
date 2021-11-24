@@ -1,7 +1,7 @@
-package fr.unilorraine.idmc.gamescatalog.controllers;
+package fr.unilorraine.idmc.gamescatalog.publisher;
 
-import fr.unilorraine.idmc.gamescatalog.entities.Publisher;
-import fr.unilorraine.idmc.gamescatalog.services.PublishersService;
+import fr.unilorraine.idmc.gamescatalog.publisher.data.NewPublisher;
+import fr.unilorraine.idmc.gamescatalog.publisher.data.PublisherView;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +14,12 @@ public class PublishersController {
     private final PublishersService service;
 
     @GetMapping
-    public Iterable<Publisher> findAll() {
+    public Iterable<PublisherView> findAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Publisher create(@RequestBody Publisher p) {
+    public PublisherView create(@RequestBody NewPublisher p) {
         return service.create(p);
     }
 }

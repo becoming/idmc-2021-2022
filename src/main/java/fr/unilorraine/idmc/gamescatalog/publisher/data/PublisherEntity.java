@@ -1,4 +1,4 @@
-package fr.unilorraine.idmc.gamescatalog.entities;
+package fr.unilorraine.idmc.gamescatalog.publisher.data;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Publisher {
+public class PublisherEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

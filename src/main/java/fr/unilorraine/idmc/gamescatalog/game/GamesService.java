@@ -1,22 +1,20 @@
-package fr.unilorraine.idmc.gamescatalog.services;
+package fr.unilorraine.idmc.gamescatalog.game;
 
-import fr.unilorraine.idmc.gamescatalog.dto.GameView;
-import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
-import fr.unilorraine.idmc.gamescatalog.exceptions.PublisherNotFound;
-import fr.unilorraine.idmc.gamescatalog.mappers.GamesMapper;
-import fr.unilorraine.idmc.gamescatalog.repositories.GamesRepository;
-import fr.unilorraine.idmc.gamescatalog.repositories.PublisherRepository;
+import fr.unilorraine.idmc.gamescatalog.core.exceptions.PublisherNotFound;
+import fr.unilorraine.idmc.gamescatalog.game.data.GameRepository;
+import fr.unilorraine.idmc.gamescatalog.game.data.GameView;
+import fr.unilorraine.idmc.gamescatalog.game.data.NewGame;
+import fr.unilorraine.idmc.gamescatalog.publisher.data.PublisherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class GamesService {
 
-    private final GamesRepository repo;
+    private final GameRepository repo;
     private final PublisherRepository publisherRepo;
     private final GamesMapper mapper;
 

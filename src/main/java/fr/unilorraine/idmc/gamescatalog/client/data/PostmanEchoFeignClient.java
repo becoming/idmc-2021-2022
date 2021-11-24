@@ -1,4 +1,4 @@
-package fr.unilorraine.idmc.gamescatalog.client;
+package fr.unilorraine.idmc.gamescatalog.client.data;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
