@@ -10,6 +10,8 @@ import fr.unilorraine.idmc.gamescatalog.repositories.PublisherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 @RequiredArgsConstructor
 public class GamesService {
@@ -18,8 +20,10 @@ public class GamesService {
     private final PublisherRepository publisherRepo;
     private final GamesMapper mapper;
 
-    public Iterable<Game> findAll() {
-        return repo.findAll();
+    public ArrayList<GameView> findAll() {
+        var result = new ArrayList<GameView>();
+        repo.findAll().forEach(game -> result.add(mapper.toDto(game)) );
+        return result;
     }
 
     public GameView create(NewGame newGame) {
