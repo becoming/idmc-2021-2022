@@ -4,6 +4,7 @@ import fr.unilorraine.idmc.gamescatalog.dto.GameView;
 import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
 import fr.unilorraine.idmc.gamescatalog.services.GamesService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
