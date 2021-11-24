@@ -22,7 +22,10 @@ public class Game {
     private int rating;
     private String category;
     private Instant releaseDate;
+
+
     private Long publisherId;
+
 
 
 

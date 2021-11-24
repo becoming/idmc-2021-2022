@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Game{
+    string gameId
+}
+
+interface Publisher{
+    string publisherId
+}
+
+interface GamePublisher{
+    string gameId
+    string publisherId
+}
+
+Game --> GamePublisher
+Publisher --> GamePublisher
+
+@enduml
