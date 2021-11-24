@@ -1,6 +1,6 @@
-package fr.unilorraine.idmc.gamescatalog.exceptions;
+package fr.unilorraine.idmc.gamescatalog.core.exceptions;
 
-import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
+import fr.unilorraine.idmc.gamescatalog.game.data.NewGame;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

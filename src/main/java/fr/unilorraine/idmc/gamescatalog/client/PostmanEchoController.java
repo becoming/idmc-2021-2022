@@ -1,7 +1,7 @@
-package fr.unilorraine.idmc.gamescatalog.controllers;
+package fr.unilorraine.idmc.gamescatalog.client;
 
-import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoClient;
-import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoFeignClient;
+import fr.unilorraine.idmc.gamescatalog.client.data.PostmanEchoClient;
+import fr.unilorraine.idmc.gamescatalog.client.data.PostmanEchoFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

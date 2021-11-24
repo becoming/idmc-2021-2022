@@ -1,4 +1,4 @@
-package fr.unilorraine.idmc.gamescatalog.dto;
+package fr.unilorraine.idmc.gamescatalog.game.data;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;

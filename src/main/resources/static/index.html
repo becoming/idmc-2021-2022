@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, I'm Index, who are you ?</title>
+</head>
+<body>
+Hello, index, i'm stephane
+</body>
+<script>
+    var myHeaders = new Headers();
+
+    var myInit = { method: 'GET',
+        headers: myHeaders,
+        mode: 'cors',
+        cache: 'default' };
+    fetch("http://localhost:8080/postman-echo/get",myInit).then(res => document.body.appendChild(document.createTextNode("\r\n"+res.text())))
+    fetch("http://localhost:8080/postman-echo/get/feign",myInit).then(res => document.body.appendChild(document.createTextNode("\r\n"+res.text())))
+</script>
+</html>
