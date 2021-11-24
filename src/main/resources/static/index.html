@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>Hello, I'm index, who are you ?</title>
 </head>
+<script>
+    fetch("https://postman-echo.com/get", {mode: 'no-cors'})
+        .then(function(response) {
+            console.log(response);
+            document.getElementById("content").textContent = response;
+        })
+</script>
 <body>
 
 Hello, Index, I'm rodi
