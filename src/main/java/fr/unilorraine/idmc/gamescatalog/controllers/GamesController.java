@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class GamesController {
 
-    private final GamesService gameService;
+    private final GamesService gamesService;
 
     @GetMapping
     public Iterable<Game> findAll() {
-        return gameService.findAll();
+        return gamesService.findAll();
     }
 
     @PostMapping
     public Game create(@RequestBody Game gg) {
-        return gameService.create(gg);
+        return gamesService.create(gg);
     }
 }
