@@ -14,3 +14,9 @@ Content-Type: application/json
   "releaseDate": "31-12-2021 13:42:00",
   "publisherId": 1
 }
+####
+
+POST http://localhost:8080/parteners/post
+Content-Type: text/plain
+
+ fields * ;
