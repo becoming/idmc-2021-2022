@@ -1,0 +1,161 @@
+IGDB.com API est gratuite pour un usage non-commercial sous les conditions de l'accord
+Twitch Developer Service.
+
+1) COnnectez-vous avec pour un compte gratuit
+2) Assurez-vous que vous avez  l'authentification à deux facteurs activée
+3) Enregistrez votre application
+4) Managez votre application nouvellement crée
+5) Générez un Client Secret en pressant [New Secret]
+6) Prenez note du Client ID et Client Secret
+
+Authentification:
+
+Maintenant que vous avez un identifiant client et un secret client, 
+vous vous authentifierez en tant que développeur Twitch à l'aide d'oauth2. 
+Des informations détaillées peuvent être trouvées sur Twitch Developer Docs.
+
+Cela vous donnera un jeton d'accès qui sera utilisé pour les futures demandes à notre API.
+
+Faites une requête POST à ​​https://id.twitch.tv/oauth2/token avec les paramètres de chaîne 
+de requête suivants, en remplaçant votre ID client et votre secret client en conséquence.
+client_id=Client ID
+
+client_secret=Client Secret
+
+grant_type=client_credentials
+
+Example
+Si votre ID client est abcdefg12345 et votre secret client est hijklmn67890, 
+l'url entière devrait ressembler à ce qui suit.
+
+https://id.twitch.tv/oauth2/token?client_id=abcdefg12345&client_secret=hijklmn67890&grant_type=client_credentials
+
+La réponse de ceci sera un objet json contenant le jeton d'accès et le nombre de secondes jusqu'à ce que le jeton expire.
+
+{
+  "access_token": "prau3ol6mg5glgek8m89ec2s9q5i3i",
+  "expires_in": 5587808,
+  "token_type": "bearer"
+}
+
+Le expires_in vous montre le nombre de secondes avant que le access_token n'expire et doive être actualisé.
+
+La plupart des requêtes à l'API utiliseront la méthode POST
+L'URL de base est : https://api.igdb.com/v4
+Vous définissez le point de terminaison que vous souhaitez interroger en ajoutant 
+/{nom du point de terminaison} à l'URL de base, par exemple. https://api.igdb.com/v4/games
+Incluez l'ID client et le access_token dans l'EN-TÊTE de votre demande afin que 
+vos en-têtes ressemblent à ce qui suit. Faites particulièrement attention à la 
+capitalisation. Le porteur doit être codé en dur.
+
+Client-ID: Client ID
+Authorization: Bearer access_token
+
+Vous utilisez le BODY de votre demande pour préciser les champs que vous souhaitez 
+récupérer ainsi que tout autre filtre, tri etc.
+
+Exemple
+Si votre identifiant client est abcdefg12345 et votre access_token est 
+prau3ol6mg5glgek8m89ec2s9q5i3i, une simple demande d'informations sur 10 jeux serait:
+
+POST https://api.igdb.com/v4/games
+Client-ID: abcdefg12345
+Authorization: Bearer prau3ol6mg5glgek8m89ec2s9q5i3i
+fields *;
+
+
+Limites de taux
+
+Il y a une limite de débit de 4 requêtes par seconde. 
+Si vous dépassez cette limite, vous recevrez une réponse avec le code d'état 
+429 Too Many Requests.
+
+Vous pouvez avoir jusqu'à 8 demandes ouvertes à tout moment. 
+Cela peut se produire si les demandes prennent plus d'une seconde pour répondre lorsque 
+plusieurs demandes sont effectuées.
+
+Endpoints
+
+- Age Rating: Age Rating according to various rating organisations
+https://api.igdb.com/v4/age_ratings
+
+-Age Rating Content Description: The organisation behind a specific rating
+https://api.igdb.com/v4/age_rating_content_descriptions
+
+-Alternative Name: Alternative and international game titles
+https://api.igdb.com/v4/alternative_names
+
+-Artwork: official artworks (resolution and aspect ratio may vary)
+https://api.igdb.com/v4/artworks
+
+-Character: Video game characters
+https://api.igdb.com/v4/characters
+
+-Character Mug Shot: Images depicting game characters
+https://api.igdb.com/v4/character_mug_shots
+
+-Collection:Collection, AKA Series
+https://api.igdb.com/v4/collections
+
+-Company: Video game companies. Both publishers & developers
+https://api.igdb.com/v4/companies
+
+-Company Logo: The logos of developers and publishers
+https://api.igdb.com/v4/company_logos
+
+-Cover: The cover art of games
+https://api.igdb.com/v4/covers
+
+-Game: Video Games!
+https://api.igdb.com/v4/games
+
+-Game Mode: Single player, Multiplayer etc
+https://api.igdb.com/v4/game_modes
+
+-Genre:  Genres of video game
+https://api.igdb.com/v4/genres
+
+-Keyword: Keywords are words or phrases that get tagged to a game such as 
+“world war 2” or “steampunk”.
+https://api.igdb.com/v4/keywords
+
+-Platform: The hardware used to run the game or game delivery network
+https://api.igdb.com/v4/platforms
+
+-Release Date: A handy endpoint that extends game release dates. Used to dig deeper into 
+release dates, platforms and versions.
+https://api.igdb.com/v4/release_dates
+
+-Search: https://api.igdb.com/v4/search
+
+-Theme: Video game themes
+https://api.igdb.com/v4/themes
+
+-Website: https://api.igdb.com/v4/websites
+
+Images example:
+
+Address:
+https://api.igdb.com/v4/games/
+Body:
+fields screenshots.*;
+where id = 1942;
+
+Donne en retour:
+https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/dfgkfivjrhcksyymh9vw.jpg
+
+Filtres:
+
+Dans le body de la requête:
+
+exemple:
+Address:
+https://api.igdb.com/v4/games/
+Body:
+search “zelda”;
+where rating >= 80 & release_dates.date > 631152000;
+
+Tri:
+
+Dans le body de la requête:
+sort rating desc;
