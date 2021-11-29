@@ -16,7 +16,13 @@ Content-Type: application/json
 }
 ####
 
-POST http://localhost:8080/parteners/post
+POST http://localhost:8080/parteners/games
 Content-Type: text/plain
 
  fields * ;
+
+######
+POST http://localhost:8080/parteners/search
+Content-Type: text/plain
+
+fields *; search "sonic the hedgehog"; limit 50;

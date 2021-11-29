@@ -42,4 +42,7 @@ public interface PartnerIGDBClient {
 
     @PostMapping(value = "/games")
     String testGet(@RequestHeader Map<String, String> headerMap, @RequestBody String str);
+
+    @PostMapping(value = "/search")
+    String searchGame(@RequestHeader Map<String, String> headerMap, @RequestBody String str);
 }
