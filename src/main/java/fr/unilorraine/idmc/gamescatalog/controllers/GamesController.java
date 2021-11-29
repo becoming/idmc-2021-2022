@@ -1,5 +1,7 @@
 package fr.unilorraine.idmc.gamescatalog.controllers;
 
+import fr.unilorraine.idmc.gamescatalog.client.GameApiFeignClient;
+import fr.unilorraine.idmc.gamescatalog.client.PostmanEchoFeignClient;
 import fr.unilorraine.idmc.gamescatalog.dto.GameView;
 import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
 import fr.unilorraine.idmc.gamescatalog.entities.Game;
@@ -18,6 +20,7 @@ import java.util.List;
 public class GamesController {
 
     private final GamesService gamesService;
+    private final GameApiFeignClient gameApiFeignClient;
 
     @GetMapping
     public List<GameView> findAll() {
@@ -28,5 +31,10 @@ public class GamesController {
     @ResponseStatus(HttpStatus.CREATED)
     public GameView create(@RequestBody NewGame gg) {
         return gamesService.create(gg);
+    }
+
+    @GetMapping("test-api")
+    public String getApiGames() {
+        return gameApiFeignClient.getGames();
     }
 }
