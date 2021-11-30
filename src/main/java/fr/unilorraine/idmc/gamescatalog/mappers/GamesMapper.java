@@ -25,9 +25,10 @@ public interface GamesMapper {
     @Mapping(source = "publisher.name", target = "publisherName")
     GameView toDto(Game gg);
 
-    default List<GameView> toDto(Iterable<Game> games){
+    default List<GameView> toDto(Iterable<Game> games) {
         var result = new ArrayList<GameView>();
         games.forEach(game -> result.add(toDto(game)));
+
         return result;
     }
 

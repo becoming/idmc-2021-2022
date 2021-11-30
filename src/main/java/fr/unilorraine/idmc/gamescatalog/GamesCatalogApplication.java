@@ -5,8 +5,6 @@ import fr.unilorraine.idmc.gamescatalog.services.GamesService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.Bean;
-
 @SpringBootApplication
 @EnableFeignClients
 public class GamesCatalogApplication {
@@ -15,9 +13,5 @@ public class GamesCatalogApplication {
 		SpringApplication.run(GamesCatalogApplication.class, args);
 	}
 
-//	@Bean
-//	public GamesService gameService(GamesRepository repo){
-//		return new GamesService(repo);
-//	}
 
 }
