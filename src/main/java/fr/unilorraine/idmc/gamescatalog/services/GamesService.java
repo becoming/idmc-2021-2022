@@ -19,6 +19,7 @@ public class GamesService {
     private final GamesMapper mapper;
 
     public Iterable<Game> findAll() {
+
         return repo.findAll();
     }
 

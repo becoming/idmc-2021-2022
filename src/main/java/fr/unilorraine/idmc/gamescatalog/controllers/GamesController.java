@@ -5,6 +5,7 @@ import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
 import fr.unilorraine.idmc.gamescatalog.entities.Game;
 import fr.unilorraine.idmc.gamescatalog.services.GamesService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -20,6 +21,7 @@ public class GamesController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public GameView create(@RequestBody NewGame gg) {
         return gamesService.create(gg);
     }

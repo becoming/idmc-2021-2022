@@ -12,10 +12,12 @@ public class PublishersService {
     private final PublisherRepository repo;
 
     public Publisher create(Publisher p) {
+
         return repo.save(p);
     }
 
     public Iterable<Publisher> findAll() {
+
         return repo.findAll();
     }
 }
