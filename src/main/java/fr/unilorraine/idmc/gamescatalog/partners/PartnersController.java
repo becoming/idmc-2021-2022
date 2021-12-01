@@ -26,12 +26,11 @@ public class PartnersController {
     public String getTest() {
         Map<String, String> headers = new HashMap<>() {{
             String auth = getAuth(properties.getToken());
-            put("Authorization", "Bearer " + auth);
             put("Client-ID", properties.getClientid());
-            put("Content-Type", "application/json");
+            put("Authorization", "Bearer " + auth);
+            put("Content-Type", "text/plain");
         }};
-
-        return gamesClient.getTest(headers, "");
+        return gamesClient.getTest(headers, "fields *;");
     }
 
     @SneakyThrows
