@@ -1,6 +1,5 @@
 package fr.unilorraine.idmc.gamescatalog.entities;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,11 +9,11 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "GAME", schema = "gamescatalog")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Game {
-
 
     @Nullable
     @Id
@@ -22,20 +21,20 @@ public class Game {
     @Column(name = "id", nullable = false)
     private Long id;
 
-
     private String name;
     private Long price;
     private int rating;
     private String category;
 
-//    https://stackoverflow.com/questions/32437550/whats-the-difference-between-instant-and-localdatetime
+    // https://stackoverflow.com/questions/32437550/whats-the-difference-between-instant-and-localdatetime
     private Instant releaseDate;
 
-//    https://vladmihalcea.com/manytoone-jpa-hibernate/
+    // https://vladmihalcea.com/manytoone-jpa-hibernate/
     @Nullable
     @ManyToOne
-//    why the _ (underscore) https://dev.to/aleksey/hibernate-naming-strategies-jpa-specification-vs-spring-boot-opinionation-m1c
-//    https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto.data-access.configure-hibernate-naming-strategy
+    // why the _ (underscore)
+    // https://dev.to/aleksey/hibernate-naming-strategies-jpa-specification-vs-spring-boot-opinionation-m1c
+    // https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto.data-access.configure-hibernate-naming-strategy
     @JoinColumn(name = "publisher_id", referencedColumnName = "id")
     private Publisher publisher;
 
