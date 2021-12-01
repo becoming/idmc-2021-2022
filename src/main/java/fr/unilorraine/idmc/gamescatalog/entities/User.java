@@ -7,15 +7,20 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "PUBLISHER", schema = "gamescatalog")
-@Getter
+@Table(name = "USER", schema = "gamescatalog")
 @Setter
+@Getter
 @NoArgsConstructor
-public class Publisher {
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    private String username;
+
+    private String password;
+
+    private String role;
+
 }

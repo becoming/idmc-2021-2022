@@ -9,15 +9,20 @@
 Hello, Index, I'm rodi
 <div id="echo-postman"></div>
 <div id="echo-postman-feign"></div>
+<div id="games-feign"></div>
 <script>
 
+    /*
     let postman1 = document.getElementById('echo-postman');
     let postman2 = document.getElementById('echo-postman-feign');
 
     fetch("http://localhost:8080/postman-echo/get")
         .then((resp) => (resp.text().then((text)=> {postman1.append(text)})))
     fetch("http://localhost:8080/postman-echo/get/feign")
-        .then((resp) => (resp.text().then((text)=> {postman2.append(text)})))
+        .then((resp) => (resp.text().then((text)=> {postman2.append(text)})))*/
+    let feign =  document.getElementById('games-feign');
+    fetch("http://localhost:8080/games-echo/get")
+        .then((resp) => (resp.text().then((text)=> {feign.append(text)})))
 
 </script>
 </body>
