@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "GAME", schema = "gamescatalog")
 @Getter
 @Setter
 @NoArgsConstructor
