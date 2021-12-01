@@ -1,5 +1,7 @@
+//@no-cookie-jar
 GET http://localhost:8080/postman-echo/get
 
 ###
 
 GET http://localhost:8080/postman-echo/get/feign
+Authorization: Basic user password
