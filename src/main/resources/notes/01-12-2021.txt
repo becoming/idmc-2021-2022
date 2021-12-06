@@ -1,0 +1,4 @@
+- add security
+- add liquidbase
+- cors
+- basic auth security

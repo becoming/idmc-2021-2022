@@ -1,0 +1,6 @@
+- static resource
+- custom properties
+- understand feign ( easier way to create api)
+- echo example ( with postman )
+- dtos implementation in game controller
+- spring web doc
