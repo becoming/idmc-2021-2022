@@ -1,40 +1,27 @@
 package fr.unilorraine.idmc.gamescatalog.services;
 
-
-import fr.unilorraine.idmc.gamescatalog.entities.Game;
-import fr.unilorraine.idmc.gamescatalog.repositories.GamesRepository;
-
 import fr.unilorraine.idmc.gamescatalog.dto.GameView;
 import fr.unilorraine.idmc.gamescatalog.dto.NewGame;
-import fr.unilorraine.idmc.gamescatalog.entities.Game;
 import fr.unilorraine.idmc.gamescatalog.exceptions.PublisherNotFound;
 import fr.unilorraine.idmc.gamescatalog.mappers.GamesMapper;
 import fr.unilorraine.idmc.gamescatalog.repositories.GamesRepository;
 import fr.unilorraine.idmc.gamescatalog.repositories.PublisherRepository;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class GamesService {
 
-
-    private final GamesRepository repository;
-
-    public Iterable<Game> findAll(){
-        return repository.findAll();
-    }
-
-    public Game create(Game gg) {
-        return repository.save(gg);
-
     private final GamesRepository repo;
     private final PublisherRepository publisherRepo;
     private final GamesMapper mapper;
 
-    public Iterable<Game> findAll() {
-        return repo.findAll();
+    public List<GameView> findAll() {
+        return mapper.toDto(repo.findAll());
     }
 
     public GameView create(NewGame newGame) {
@@ -48,6 +35,5 @@ public class GamesService {
         gg = repo.save(gg);
 
         return mapper.toDto(gg);
-
     }
 }
