@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "GAME", schema = "GAMESCATALOG")
 @Getter
 @Setter
 @NoArgsConstructor
