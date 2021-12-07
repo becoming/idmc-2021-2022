@@ -2,6 +2,7 @@ package fr.unilorraine.idmc.gamescatalog.config;
 
 import fr.unilorraine.idmc.gamescatalog.core.PasswordChecker;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -14,6 +15,7 @@ public class DBAuthProvider implements AuthenticationProvider {
     private final UserDetailsService detailsService;
     private final PasswordChecker checker;
 
+    @SneakyThrows
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         if(authentication.getCredentials() == null) {
