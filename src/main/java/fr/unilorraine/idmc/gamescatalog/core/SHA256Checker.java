@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class SHA256Checker implements PasswordChecker {
 
@@ -19,6 +20,6 @@ public class SHA256Checker implements PasswordChecker {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest(target.getBytes(StandardCharsets.UTF_8));
 
-        return source.equals(hash.toString());
+        return source.equals(Arrays.toString(hash));
     }
 }
