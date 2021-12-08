@@ -1,5 +1,5 @@
 package fr.unilorraine.idmc.gamescatalog.config;
 
 public enum UsersStorage {
-    IN_MEMORY;
+    IN_MEMORY, DB
 }

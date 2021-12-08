@@ -1,10 +1,16 @@
+#https://www.jetbrains.com/help/idea/exploring-http-syntax.html#enable-disable-saving-cookies
+#https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies
+
+// @no-cookie-jar
 GET http://localhost:8080/games
 Content-Type: application/json
+Authorization: Basic admin password
 
 ###
 
 POST http://localhost:8080/games
 Content-Type: application/json
+Authorization: Basic user password
 
 {
   "name": "Quake III",

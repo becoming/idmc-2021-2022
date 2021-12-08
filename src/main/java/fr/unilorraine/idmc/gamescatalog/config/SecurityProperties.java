@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import static fr.unilorraine.idmc.gamescatalog.config.UsersStorage.IN_MEMORY;
 
-
 @Component
 @ConfigurationProperties("app.security")
 public class SecurityProperties {

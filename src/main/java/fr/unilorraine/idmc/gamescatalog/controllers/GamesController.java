@@ -14,7 +14,9 @@ import java.util.List;
 // https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
 @RequestMapping("games")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"*"})
+
+// https://spring.io/guides/gs/rest-service-cors/
+@CrossOrigin(origins = {"*", "localhost", "google.com"})
 public class GamesController {
 
     private final GamesService gamesService;
