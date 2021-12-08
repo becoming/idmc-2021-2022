@@ -6,22 +6,7 @@
 </head>
 <body>
 
-Hello, Index, I'm toto !
+Hello, Index, I'm rodi
 
 </body>
-<script>
-    let init = {
-        method: 'GET',
-        headers: new Headers(),
-        mode: 'cors',
-        cache: 'default'
-    };
-
-    fetch("http://localhost:8080/postman-echo/get/feign", init).then(res =>
-        document.body.appendChild(document.createTextNode("\n" + res.text()))
-    );
-    fetch("http://localhost:8080/postman-echo/get", init).then(res =>
-        document.body.appendChild(document.createTextNode("\n" + res.text()))
-    );
-</script>
 </html>
